@@ -35,31 +35,18 @@ const getNextTile = (direction, player) => {
 }
 
 const updateGrid = (grid, apple, player, points, gridW) => {
-  grid.forEach((c, i) => {
-    c.forEach((r, j) => {
-      grid[i][j] = 0
-    })
-  })
-
-  grid[apple[0]][apple[1]] = 2
-
   player.splice(points + 1, player.length)
-  player.forEach(s => grid[s[0]][s[1]] = 1)
 
   process.stdout.write(' '.padEnd(gridW + 1, '=') + '\n')
-  grid.forEach(r => {
+  grid.forEach((c, i) => {
     process.stdout.write('|')
-    r.forEach(c => {
-      switch(c) {
-      case(1):
-        process.stdout.write('#')
-        break
-      case(2):
+    c.forEach((r, j) => {
+      if (i === apple[0] && j === apple[1]) {
         process.stdout.write('*')
-        break
-      default:
+      } else if (player.some(e => JSON.stringify(e) === `[${i},${j}]`)) {
+        process.stdout.write('#')
+      } else {
         process.stdout.write(' ')
-        break
       }
     })
     process.stdout.write('|\n')
