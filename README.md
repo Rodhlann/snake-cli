@@ -1,7 +1,7 @@
 # snake-shell
 Snake game built for the command line
 
-[![NPM Version][npm-image]][npm-url]
+[![npm version](https://badge.fury.io/js/snake-shell.svg)](https://badge.fury.io/js/snake-shell)
 
 ## Install
 
