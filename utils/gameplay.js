@@ -40,11 +40,11 @@ const updateGrid = (grid, apple, player, points, gridW) => {
   process.stdout.write(' '.padEnd(gridW + 1, '=') + '\n')
   grid.forEach((c, i) => {
     process.stdout.write('|')
-    c.forEach((r, j) => {
-      if (i === apple[0] && j === apple[1]) {
-        process.stdout.write('*')
-      } else if (player.some(e => JSON.stringify(e) === `[${i},${j}]`)) {
+    c.forEach((_, j) => {
+      if (player.some(e => JSON.stringify(e) === `[${i},${j}]`)) {
         process.stdout.write('#')
+      } else if (i === apple[0] && j === apple[1]) {
+        process.stdout.write('*')
       } else {
         process.stdout.write(' ')
       }
