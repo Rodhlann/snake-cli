@@ -1,0 +1,12 @@
+{
+  "name": "snake-cli",
+  "version": "1.0.0",
+  "bin": {
+    "snake": "bin/snake"
+  },
+  "author": "Tim Pepper",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  }
+}
