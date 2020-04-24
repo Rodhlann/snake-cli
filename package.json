@@ -1,6 +1,11 @@
 {
-  "name": "snake-cli",
+  "name": "snake-shell",
   "version": "1.0.0",
+  "description": "Snake for your shell",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rodhlann/snake-shell.git"
+  },
   "bin": {
     "snake": "bin/snake"
   },
