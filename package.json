@@ -1,11 +1,13 @@
 {
   "name": "snake-shell",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Snake for your shell",
+  "engines" : { "node" : "12.3.1" },
   "repository": {
     "type": "git",
     "url": "https://github.com/Rodhlann/snake-shell.git"
   },
+  "keywords": ["snake"],
   "bin": {
     "snake": "bin/snake"
   },
