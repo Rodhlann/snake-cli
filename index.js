@@ -9,6 +9,7 @@ const {
   updateGrid,
 } = require('./utils/gameplay')
 const readline = require('readline')
+const { clearScreen } = require('./utils/clearScreen')
 
 module.exports = () => {
   let keyCode
@@ -33,16 +34,11 @@ module.exports = () => {
 
   const grid = createGrid(gridH, gridW)
 
+  clearScreen()
+  process.stdout.write('\u001B[?25l')
   const loop = () => {
     process.stdout.cursorTo(0, 0)
-    process.stdout.clearScreenDown()
     process.stdout.write(`Points: ${points}\n`)
-
-    if (gameOver) {
-      process.stdout.write('Game Over!')
-      clearInterval(interval)
-      process.exit()
-    }
 
     direction = updateDirection(keyCode, direction)
     const nextTile = getNextTile(direction, player)
@@ -64,6 +60,13 @@ module.exports = () => {
       }
 
       updateGrid(grid, apple, player, points, gridW)
+    } else {
+      clearScreen()
+      process.stdout.write(`Points: ${points}\n`)
+      process.stdout.write('Game Over!')
+      process.stdout.write('\u001B[?25h')
+      clearInterval(interval)
+      process.exit()
     }
   }
 

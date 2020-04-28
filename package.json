@@ -1,6 +1,6 @@
 {
   "name": "snake-shell",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Snake for your shell",
   "engines" : { "node" : "12.3.1" },
   "repository": {
